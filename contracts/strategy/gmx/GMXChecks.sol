@@ -43,7 +43,7 @@ library GMXChecks {
 
     if (dp.amt == 0) revert Errors.EmptyDepositAmount();
 
-    if (dp.amt + dp.executionFee != msg.value)
+    if (dp.amt + dp.executionFee != msg.value) // @audit LR avoid adding specific checks , use >= instead 
       revert Errors.DepositAndExecutionFeeDoesNotMatchMsgValue();
   }
 

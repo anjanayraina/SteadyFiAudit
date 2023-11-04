@@ -51,7 +51,7 @@ library GMXReader {
     uint256 currentEquity
   ) public view returns (uint256) {
     uint256 _sharesSupply = IERC20(address(self.vault)).totalSupply() + pendingFee(self);
-    if (_sharesSupply == 0 || currentEquity == 0) return value;
+    if (_sharesSupply == 0 || currentEquity == 0) return value; // @audit redundent _sharesSupply check as it will give 0 anyways 
     return value * _sharesSupply / currentEquity;
   }
 
