@@ -42,7 +42,7 @@ library GMXDeposit {
   event DepositCancelled(
     address indexed user
   );
-  event DepositFailed(bytes reason);
+  event DepositFailed(bytes reason); // @audit events not indexed 
 
   /* ================== MUTATIVE FUNCTIONS =================== */
 

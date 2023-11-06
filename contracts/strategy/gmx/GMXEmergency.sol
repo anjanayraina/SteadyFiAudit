@@ -28,7 +28,7 @@ library GMXEmergency {
   event EmergencyClose(
     uint256 repayTokenAAmt,
     uint256 repayTokenBAmt
-  );
+  ); // @audit events not indexed 
   event EmergencyWithdraw(
     address indexed user,
     uint256 sharesAmt,
