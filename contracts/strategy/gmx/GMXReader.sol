@@ -64,7 +64,7 @@ library GMXReader {
     address token,
     uint256 amt
   ) public view returns (uint256) {
-    return amt * 10**(18 - IERC20Metadata(token).decimals())
+    return amt * 10**(18 - IERC20Metadata(token).decimals()) // @audit magic numbers used in here 
                 * self.chainlinkOracle.consultIn18Decimals(token)
                 / SAFE_MULTIPLIER;
   }
